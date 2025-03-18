@@ -1,3 +1,7 @@
+// 使用API
+// Twitter API : 情報取得
+// OpenAI API : サマリ作成 gpt-4o-mini
+// Slack API : 通知
 function fetchAndSummarizeTweets() {
   const scriptProperties = PropertiesService.getScriptProperties();
   const twitterBearerToken = scriptProperties.getProperty('TWITTER_BEARER_TOKEN');
@@ -34,7 +38,7 @@ function fetchAndSummarizeTweets() {
   };
   
   const openAiPayload = {
-    model: 'gpt-4',
+    model: 'gpt-4o-mini',
     messages: [
       { role: 'system', content: '以下のツイートを日本語で簡潔かつ情報価値の高い形で要約してください。' },
       { role: 'user', content: tweetTexts }

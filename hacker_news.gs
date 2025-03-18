@@ -1,3 +1,5 @@
+// 使用API
+// Slack API : 通知
 function sendHackerNewsToSlack() {
   // Slack設定の取得
   var slackToken = PropertiesService.getScriptProperties().getProperty("SLACK_BOT_TOKEN");
