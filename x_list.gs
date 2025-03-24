@@ -40,7 +40,7 @@ function fetchAndSummarizeTweets() {
   const openAiPayload = {
     model: 'gpt-4o-mini',
     messages: [
-      { role: 'system', content: '以下のツイートを日本語で簡潔かつ情報価値の高い形で要約してください。' },
+      { role: 'system', content: '以下のツイートを日本語で簡潔かつ情報価値の高い形で要約してください。参考にあるリンクがある場合はそれも表示してください' },
       { role: 'user', content: tweetTexts }
     ]
   };
