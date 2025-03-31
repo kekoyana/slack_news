@@ -12,7 +12,7 @@ function sendHackerNewsToSlack() {
   // Hacker Newsの記事取得
   var url = "https://hacker-news.firebaseio.com/v0/topstories.json";
   var response = UrlFetchApp.fetch(url);
-  var topStoryIDs = JSON.parse(response.getContentText()).slice(0, 5);
+  var topStoryIDs = JSON.parse(response.getContentText()).slice(0, 10);
   
   // 記事の詳細を取得し、翻訳
   var translatedNews = topStoryIDs.map(function(id) {
