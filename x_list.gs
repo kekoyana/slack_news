@@ -3,13 +3,13 @@
 // Google Gemini API : サマリ作成 gemini-pro
 // Slack API : 通知
 function fetchAndSummarizeTweets() {
-  // 実行日を判定（奇数日のみ実行）
-  const today = new Date();
-  const day = today.getDate();
-  if (day % 2 === 0) {
-    Logger.log('本日は実行日ではありません（偶数日）。スキップします。');
-    return;
-  }
+    // 実行日を判定（月・水・金のみ実行）
+    const today = new Date();
+    const dayOfWeek = today.getDay(); // 0:日, 1:月, 2:火, 3:水, 4:木, 5:金, 6:土
+    if (![1, 3, 5].includes(dayOfWeek)) {
+      Logger.log('本日は実行日ではありません（月・水・金以外）。スキップします。');
+      return;
+    }
 
   const scriptProperties = PropertiesService.getScriptProperties();
   const twitterBearerToken = scriptProperties.getProperty('TWITTER_BEARER_TOKEN');
