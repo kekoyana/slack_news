@@ -1,3 +1,8 @@
+/**
+ * 取得するGitHubトレンド件数
+ */
+var MAX_TRENDING_COUNT = 20;
+
 // 使用API
 // Slack API : 通知
 function githubTrendingToSlack() {
@@ -19,7 +24,7 @@ function githubTrendingToSlack() {
     return;
   }
   
-  var trendingRepos = articles.slice(0, 10).map(function(article) {
+  var trendingRepos = articles.slice(0, MAX_TRENDING_COUNT).map(function(article) {
     try {
       // リポジトリリンクを取得（h2内のLink classを持つa要素）
       var repoMatch = article.match(/<h2[^>]*>[\s\S]*?<a[^>]*?href="(\/[^"\/]+\/[^"\/]+)"[^>]*?class="Link">/);

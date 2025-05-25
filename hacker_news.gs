@@ -1,3 +1,8 @@
+/**
+ * 取得するHacker News件数
+ */
+var MAX_HN_COUNT = 20;
+
 // 使用API
 // Slack API : 通知
 function sendHackerNewsToSlack() {
@@ -12,7 +17,7 @@ function sendHackerNewsToSlack() {
   // Hacker Newsの記事取得
   var url = "https://hacker-news.firebaseio.com/v0/topstories.json";
   var response = UrlFetchApp.fetch(url);
-  var topStoryIDs = JSON.parse(response.getContentText()).slice(0, 10);
+  var topStoryIDs = JSON.parse(response.getContentText()).slice(0, MAX_HN_COUNT);
   
   // 記事の詳細を取得し、翻訳
   var translatedNews = topStoryIDs.map(function(id) {
