@@ -47,7 +47,7 @@ function fetchAndSummarizeTweets() {
   const geminiPayload = {
     contents: [{
       parts: [{
-        text: `以下のツイート群を日本語で簡潔かつ情報価値の高い形で要約してください。箇条書きや段落分けを適切に用い、重要な情報（特にリンクなど）は必ず含めてください。\n\n${tweetTexts}`
+        text: `以下のツイート群を日本語で簡潔かつ情報価値の高い形で要約してください。箇条書きや段落分けを適切に用い、重要な情報（特にリンクなど）は必ず含めてください。出力はslackのフォーマットで表示できるものにしてください。\n\n${tweetTexts}`
       }]
     }]
   };
