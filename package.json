@@ -19,5 +19,8 @@
     "url": "https://github.com/kekoyana/slack_news/issues"
   },
   "homepage": "https://github.com/kekoyana/slack_news#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "clasp": "^1.0.0"
+  }
 }

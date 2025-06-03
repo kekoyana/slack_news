@@ -39,8 +39,8 @@ function sendHackerNewsToSlack() {
   }).filter(Boolean);
 
   // Slackにメッセージを送信
-  var message = "*HackerNews*\n" + translatedNews.map(function(story) {
-    return "*" + story.title + "*\n<" + story.url + "|記事を読む>";
+  var message = "*【HackerNews】*\n" + translatedNews.map(function(story) {
+    return story.url ? "<" + story.url + "|" + story.title + ">" : story.title;
   }).join("\n");
   
   var payload = {
